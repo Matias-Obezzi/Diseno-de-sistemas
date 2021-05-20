@@ -1,13 +1,19 @@
 package as.edu.utn.frba.dds.qmp.dominio.prenda.material;
 
 public class Material {
-  private Trama trama = Trama.LISA;
+  private Trama trama;
   private TipoDeMaterial tipo;
   private Color colorPrincipal;
   private Color colorSecundario;
 
-  public Material(Trama trama, TipoDeMaterial tipoDeMaterial,
+  public Material(TipoDeMaterial tipoDeMaterial,
                   Color colorPrincipal, Color colorSecundario) {
+    this(tipoDeMaterial, colorPrincipal, colorSecundario, Trama.LISA);
+  }
+
+  public Material(TipoDeMaterial tipoDeMaterial,
+                  Color colorPrincipal, Color colorSecundario,
+                  Trama trama) {
     this.trama = trama;
     this.tipo = tipoDeMaterial;
     this.colorPrincipal = colorPrincipal;
