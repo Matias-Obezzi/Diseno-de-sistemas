@@ -3,76 +3,67 @@ package as.edu.utn.frba.dds.qmp.dominio.prenda;
 import as.edu.utn.frba.dds.qmp.dominio.prenda.material.TipoDeMaterial;
 import as.edu.utn.frba.dds.qmp.exceptions.TipoMaterialInvalidoParaCategoriaException;
 
+import java.awt.*;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public enum TipoDePrenda {
   ZAPATOS(
     Categoria.CALZADO,
-    new ArrayList<TipoDeMaterial>() {
-      {
-        add(TipoDeMaterial.ALGODON);
-        add(TipoDeMaterial.ACETATO);
-        add(TipoDeMaterial.LANA);
-        add(TipoDeMaterial.PIQUE);
-        add(TipoDeMaterial.TELA);
-      }
-    }
+    Arrays.asList(
+      TipoDeMaterial.ALGODON,
+      TipoDeMaterial.ACETATO,
+      TipoDeMaterial.LANA,
+      TipoDeMaterial.PIQUE,
+      TipoDeMaterial.CUERO
+    )
   ),
   ZAPATILLAS(
     Categoria.CALZADO,
-    new ArrayList<TipoDeMaterial>() {
-      {
-        add(TipoDeMaterial.ALGODON);
-        add(TipoDeMaterial.ACETATO);
-        add(TipoDeMaterial.LANA);
-        add(TipoDeMaterial.PIQUE);
-        add(TipoDeMaterial.CUERO);
-      }
-    }
+    Arrays.asList(
+      TipoDeMaterial.ALGODON,
+      TipoDeMaterial.ACETATO,
+      TipoDeMaterial.LANA,
+      TipoDeMaterial.PIQUE,
+      TipoDeMaterial.CUERO
+    )
   ),
   CAMISA_MANGAS_CORTAS(
     Categoria.PARTE_SUPERIOR,
-    new ArrayList<TipoDeMaterial>() {
-      {
-        add(TipoDeMaterial.ACETATO);
-        add(TipoDeMaterial.PIQUE);
-        add(TipoDeMaterial.CUERO);
-      }
-    }
+    Arrays.asList(
+      TipoDeMaterial.ACETATO,
+      TipoDeMaterial.PIQUE,
+      TipoDeMaterial.CUERO
+    )
   ),
   CAMISA_MANGAS_LARGAS(
     Categoria.PARTE_SUPERIOR,
-    new ArrayList<TipoDeMaterial>() {
-      {
-        add(TipoDeMaterial.ACETATO);
-        add(TipoDeMaterial.PIQUE);
-        add(TipoDeMaterial.CUERO);
-      }
-    }
+    Arrays.asList(
+      TipoDeMaterial.ACETATO,
+      TipoDeMaterial.PIQUE,
+      TipoDeMaterial.CUERO
+    )
   ),
   CHOMBA(
     Categoria.PARTE_SUPERIOR,
-    new ArrayList<TipoDeMaterial>() {
-      {
-        add(TipoDeMaterial.ACETATO);
-        add(TipoDeMaterial.CUERO);
-      }
-    }
+    Arrays.asList(
+      TipoDeMaterial.ACETATO,
+      TipoDeMaterial.CUERO
+    )
   ),
   PANTALON(
     Categoria.PARTE_INFERIOR,
-    new ArrayList<TipoDeMaterial>() {
-      {
-        add(TipoDeMaterial.PIQUE);
-        add(TipoDeMaterial.CUERO);
-      }
-    }
+    Arrays.asList(
+      TipoDeMaterial.PIQUE,
+      TipoDeMaterial.CUERO
+    )
   );
 
   private Categoria categoria;
-  private ArrayList<TipoDeMaterial> materialesInvalidos;
+  private List<TipoDeMaterial> materialesInvalidos;
 
-  TipoDePrenda(Categoria categoria, ArrayList<TipoDeMaterial> materialesInvalidos) {
+  TipoDePrenda(Categoria categoria, List<TipoDeMaterial> materialesInvalidos) {
     this.categoria = categoria;
     this.materialesInvalidos = materialesInvalidos;
   }
