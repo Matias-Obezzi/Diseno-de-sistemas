@@ -9,7 +9,7 @@ import as.edu.utn.frba.dds.qmp.dominio.prenda.material.TipoDeMaterial;
 public class SastreJohnson extends Sastre {
 
   @Override
-  protected Prenda fabricarParteSuperior() {
+  protected Prenda fabricarParteSuperior() throws Exception {
     BorradorPrenda borrador = new BorradorPrenda(TipoDePrenda.CAMISA_MANGAS_LARGAS);
     borrador.colorPrincipal(new Color(255, 255, 255));
     borrador.tipoMaterial(TipoDeMaterial.TELA);
@@ -17,7 +17,7 @@ public class SastreJohnson extends Sastre {
   }
 
   @Override
-  protected Prenda fabricarParteInferior() {
+  protected Prenda fabricarParteInferior() throws Exception {
     BorradorPrenda borrador = new BorradorPrenda(TipoDePrenda.PANTALON);
     borrador.colorPrincipal(new Color(0, 0, 0));
     borrador.tipoMaterial(TipoDeMaterial.TELA);
@@ -25,7 +25,7 @@ public class SastreJohnson extends Sastre {
   }
 
   @Override
-  protected Prenda fabricarCalzado() {
+  protected Prenda fabricarCalzado() throws Exception {
     BorradorPrenda borrador = new BorradorPrenda(TipoDePrenda.ZAPATOS);
     borrador.colorPrincipal(new Color(0, 0, 0));
     borrador.tipoMaterial(TipoDeMaterial.CUERO);

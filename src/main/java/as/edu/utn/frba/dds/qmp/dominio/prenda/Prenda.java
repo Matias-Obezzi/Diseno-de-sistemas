@@ -41,4 +41,28 @@ public class Prenda {
   public Color colorSecundario() {
     return material.colorSecundario();
   }
+
+  public boolean acordeATemperatura(int temperatura) {
+    return this.tipo.temperaturaValida(temperatura);
+  }
+
+  public boolean esParteSuperior() {
+    return this.categoriaEs(Categoria.PARTE_SUPERIOR);
+  }
+
+  public boolean esParteInferior() {
+    return this.categoriaEs(Categoria.PARTE_INFERIOR);
+  }
+
+  public boolean esCalzado() {
+    return this.categoriaEs(Categoria.CALZADO);
+  }
+
+  public boolean esAccesorio() {
+    return this.categoriaEs(Categoria.PARTE_INFERIOR);
+  }
+
+  private boolean categoriaEs(Categoria esperada) {
+    return this.categoria().equals(esperada);
+  }
 }

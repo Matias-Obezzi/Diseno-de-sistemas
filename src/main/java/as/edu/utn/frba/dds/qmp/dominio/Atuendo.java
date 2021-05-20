@@ -5,10 +5,10 @@ import as.edu.utn.frba.dds.qmp.dominio.prenda.Prenda;
 import as.edu.utn.frba.dds.qmp.exceptions.CategoriaIncorrectaDePrendaException;
 
 public class Atuendo {
-  Prenda calzado;
-  Prenda parteInferior;
-  Prenda parteSuperior;
-  Prenda accesorio;
+  private Prenda calzado;
+  private Prenda parteInferior;
+  private Prenda parteSuperior;
+  private Prenda accesorio;
 
   public Atuendo(Prenda parteSuperior, Prenda parteInferior, Prenda calzado) {
     this(parteSuperior, parteInferior, calzado, null);
@@ -42,10 +42,10 @@ public class Atuendo {
   }
 
   private void evaluarCategoriaPrenda(Prenda prenda, Categoria categoriaEsperada) {
-    if(prenda.equals(null)) {
+    if (prenda == null) {
       return;
     }
-    if(!prenda.categoria().equals(categoriaEsperada)) {
+    if (!prenda.categoria().equals(categoriaEsperada)) {
       throw new CategoriaIncorrectaDePrendaException(prenda.categoria(), categoriaEsperada);
     }
   }
