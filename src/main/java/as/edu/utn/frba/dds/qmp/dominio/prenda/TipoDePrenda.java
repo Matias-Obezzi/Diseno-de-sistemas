@@ -3,7 +3,6 @@ package as.edu.utn.frba.dds.qmp.dominio.prenda;
 import as.edu.utn.frba.dds.qmp.dominio.prenda.material.TipoDeMaterial;
 import as.edu.utn.frba.dds.qmp.exceptions.TipoMaterialInvalidoParaCategoriaException;
 
-import as.edu.utn.frba.dds.qmp.prenda.material.TipoDeMaterial;
 import java.util.ArrayList;
 
 public enum TipoDePrenda {
@@ -80,7 +79,7 @@ public enum TipoDePrenda {
 
   public void validarMaterial(TipoDeMaterial material) throws Exception {
     if (materialesInvalidos.stream().anyMatch(el -> el.equals(material))) {
-      throw new Exception("El material es invalido para la categoria seleccionada");
+      throw new TipoMaterialInvalidoParaCategoriaException(material, categoria);
     }
   }
 
