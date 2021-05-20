@@ -25,13 +25,9 @@ public class BorradorPrenda {
     this.material.trama(trama);
   }
 
-  public void tipoMaterial(TipoDeMaterial tipoDeMaterial) {
-    try {
-      this.tipoDePrenda.validarMaterial(tipoDeMaterial);
-      this.material.tipo(tipoDeMaterial);
-    } catch (Exception exception) {
-      System.out.println(exception.getMessage());
-    }
+  public void tipoMaterial(TipoDeMaterial tipoDeMaterial) throws Exception {
+    this.tipoDePrenda.validarMaterial(tipoDeMaterial);
+    this.material.tipo(tipoDeMaterial);
   }
 
   public void colorPrincipal(Color color) {
@@ -42,13 +38,8 @@ public class BorradorPrenda {
     this.material.colorSecundario(color);
   }
 
-  public Prenda confirmar() {
-    try {
-      tipoDePrenda.validarMaterial(this.material.tipo());
-      return new Prenda(this.tipoDePrenda, this.material);
-    } catch (Exception exception) {
-      System.out.println(exception.getMessage());
-      return null;
-    }
+  public Prenda confirmar() throws Exception {
+    tipoDePrenda.validarMaterial(this.material.tipo());
+    return new Prenda(this.tipoDePrenda, this.material);
   }
 }
