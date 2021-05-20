@@ -1,10 +1,10 @@
-package as.edu.utn.frba.dds.qmp.sastre;
+package as.edu.utn.frba.dds.qmp.dominio.sastre;
 
-import as.edu.utn.frba.dds.qmp.prenda.BorradorPrenda;
-import as.edu.utn.frba.dds.qmp.prenda.Prenda;
-import as.edu.utn.frba.dds.qmp.prenda.TipoDePrenda;
-import as.edu.utn.frba.dds.qmp.prenda.material.Color;
-import as.edu.utn.frba.dds.qmp.prenda.material.TipoDeMaterial;
+import as.edu.utn.frba.dds.qmp.dominio.prenda.BorradorPrenda;
+import as.edu.utn.frba.dds.qmp.dominio.prenda.Prenda;
+import as.edu.utn.frba.dds.qmp.dominio.prenda.TipoDePrenda;
+import as.edu.utn.frba.dds.qmp.dominio.prenda.material.Color;
+import as.edu.utn.frba.dds.qmp.dominio.prenda.material.TipoDeMaterial;
 
 public class SastreJohnson extends Sastre {
 

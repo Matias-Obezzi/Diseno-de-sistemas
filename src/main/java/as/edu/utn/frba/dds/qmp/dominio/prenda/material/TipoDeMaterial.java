@@ -1,4 +1,4 @@
-package as.edu.utn.frba.dds.qmp.prenda.material;
+package as.edu.utn.frba.dds.qmp.dominio.prenda.material;
 
 public enum TipoDeMaterial {
   ALGODON,

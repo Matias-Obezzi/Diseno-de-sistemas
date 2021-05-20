@@ -1,9 +1,9 @@
-package as.edu.utn.frba.dds.qmp.prenda;
+package as.edu.utn.frba.dds.qmp.dominio.prenda;
 
-import as.edu.utn.frba.dds.qmp.prenda.material.Color;
-import as.edu.utn.frba.dds.qmp.prenda.material.Material;
-import as.edu.utn.frba.dds.qmp.prenda.material.TipoDeMaterial;
-import as.edu.utn.frba.dds.qmp.prenda.material.Trama;
+import as.edu.utn.frba.dds.qmp.dominio.prenda.material.Color;
+import as.edu.utn.frba.dds.qmp.dominio.prenda.material.Material;
+import as.edu.utn.frba.dds.qmp.dominio.prenda.material.TipoDeMaterial;
+import as.edu.utn.frba.dds.qmp.dominio.prenda.material.Trama;
 
 public class BorradorPrenda {
   private TipoDePrenda tipoDePrenda;
