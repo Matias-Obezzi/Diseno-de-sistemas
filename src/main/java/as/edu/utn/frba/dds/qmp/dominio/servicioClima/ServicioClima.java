@@ -11,7 +11,7 @@ import java.net.URL;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public abstract class ServicioClima<T> {
+public abstract class ServicioClima {
   private String apiUrl;
   private String token;
 
@@ -20,6 +20,7 @@ public abstract class ServicioClima<T> {
     this.apiUrl = apiUrl;
     this.token = token;
   }
+
   public JSONObject getWeather(String ciudad) throws Exception {
     StringBuilder resultado = new StringBuilder();
     URL url = new URL(this.apiUrl);
@@ -33,14 +34,5 @@ public abstract class ServicioClima<T> {
     }
     rd.close();
     return new JSONObject().getJSONObject(resultado.toString());
-  }
-
-  private static String readAll(Reader rd) throws Exception {
-    StringBuilder sb = new StringBuilder();
-    int cp;
-    while ((cp = rd.read()) != -1) {
-      sb.append((char) cp);
-    }
-    return sb.toString();
   }
 }
