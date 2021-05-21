@@ -7,4 +7,4 @@
 - [4ta Iteración](https://docs.google.com/document/d/1sy9S9EeIQr8fhatKnfTCgOfjVniJDu2viI-Av0gn0xY/edit)
 
 ## Diagrama de Clases
-![Diagrama_de_clases](./assets/Diagrama_de_clases.jpeg)
+Haga click [aquí](https://lucid.app/lucidchart/invitations/accept/inv_02d6f843-8dcf-4e71-8d25-234b88b94ced?viewport_loc=-1476%2C-1216%2C1472%2C743%2C0_0) para acceder al diagrama de clases
