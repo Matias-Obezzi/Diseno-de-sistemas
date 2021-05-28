@@ -32,7 +32,7 @@ public class Usuario {
   }
 
   public void nuevoGuardarropa(String descripcion) {
-    this.nuevoGuardarropa(descripcion, Arrays.AsList());
+    this.nuevoGuardarropa(descripcion, Arrays.asList());
   }
 
   public void nuevoGuardarropa(String descripcion, List<Prenda> prendas) {
