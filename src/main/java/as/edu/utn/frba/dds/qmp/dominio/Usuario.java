@@ -27,7 +27,7 @@ public class Usuario {
   }
 
   public void nuevaPrenda(Prenda prenda, String idGuardarropa) {
-    this.guardarropaPorId(idGuardarropa).nuevaPrenda(prenda);
+    this.guardarropaPorId(idGuardarropa).nuevaPrenda(prenda, this.id);
   }
 
   public Guardarropa guardarropaPorId(String idGuardarropa) {
