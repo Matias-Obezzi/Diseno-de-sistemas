@@ -8,10 +8,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class GeneradorSugerencias {
-  public List<Atuendo> sugerencias(List<Prenda> prendas) throws Exception {
-    return null;
-  }
+public abstract class GeneradorSugerencias {
+  public abstract List<Atuendo> sugerencias(List<Prenda> prendas) throws Exception;
 
   public List<Atuendo> generadorSugerenciasDesde(List<Prenda> prendasAptas) {
     // Si, se que esta feo el repetir 3 veces lo mismo. Intente hacerlo con un Predicate como parametro
