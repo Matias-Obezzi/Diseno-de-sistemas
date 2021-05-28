@@ -1,8 +1,9 @@
-package as.edu.utn.frba.dds.qmp.dominio;
+package as.edu.utn.frba.dds.qmp.dominio.guardarropa;
 
+import as.edu.utn.frba.dds.qmp.dominio.Atuendo;
+import as.edu.utn.frba.dds.qmp.dominio.guardarropa.sugerenciaGuardarropa.PropuestaModificacionGuardarropa;
 import as.edu.utn.frba.dds.qmp.dominio.prenda.Prenda;
 import as.edu.utn.frba.dds.qmp.dominio.sugerencia.GeneradorSugerencias;
-import as.edu.utn.frba.dds.qmp.dominio.sugerencia.SugerenciaClimatica;
 
 import java.util.Arrays;
 import java.util.List;
@@ -10,10 +11,11 @@ import java.util.UUID;
 
 public class Guardarropa {
   private String id;
-  private List<Prenda> prendas;
-  private List<Prenda> prendasSugeridas;
-  private List<String> idUsuarios;
   private String descripcion;
+  private List<Prenda> prendas;
+  private List<String> idUsuarios;
+  private List<PropuestaModificacionGuardarropa> propuestaPendientes;
+  private List<PropuestaModificacionGuardarropa> propuestaAceptadas;
 
   public Guardarropa(String idUsuario) {
     this(idUsuario,"");
@@ -30,16 +32,32 @@ public class Guardarropa {
     this.id = UUID.randomUUID().toString();
   }
 
-  public void nuevaPrenda(Prenda prenda, String idUsuario) {
-    if(!this.idUsuarios.contains(idUsuario)) {
-      this.nuevaSugerencia(prenda);
-    } else {
-      this.prendas.add(prenda);
-    }
+  public void nuevaPrenda(Prenda prenda) {
+    this.prendas.add(prenda);
   }
 
-  public void nuevaSugerencia(Prenda prenda) {
-    this.prendasSugeridas.add(prenda);
+  public void quitarPrenda(Prenda prenda) {
+    this.prendas.remove(prenda);
+  }
+
+  public void nuevaPropuesta(PropuestaModificacionGuardarropa propuesta) {
+    this.propuestaPendientes.add(propuesta);
+  }
+
+  public void aceptarPropuesta(PropuestaModificacionGuardarropa propuesta) {
+    propuesta.aplicar(this);
+    this.propuestaAceptadas.add(propuesta);
+    this.propuestaPendientes.remove(propuesta);
+  }
+
+  public void rechazarPropuesta(PropuestaModificacionGuardarropa propuesta) {
+    this.propuestaPendientes.remove(propuesta);
+  }
+
+  public void deshacerPropuesta(PropuestaModificacionGuardarropa propuesta) {
+    propuesta.deshacer(this);
+    this.propuestaPendientes.add(propuesta);
+    this.propuestaAceptadas.remove(propuesta);
   }
 
   public List<Prenda> prendas() {
