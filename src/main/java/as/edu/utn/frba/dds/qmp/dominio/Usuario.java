@@ -10,6 +10,7 @@ import as.edu.utn.frba.dds.qmp.exceptions.UsuarioException;
 import as.edu.utn.frba.dds.qmp.repositories.RepositorioGuardarropas;
 
 import java.util.*;
+import java.util.Arrays;
 
 public class Usuario {
   private String id;
@@ -27,7 +28,15 @@ public class Usuario {
   }
 
   public void nuevoGuardarropa() {
-    this.repositorioGuardarropas.nuevo(new Guardarropa(this.id));
+    this.nuevoGuardarropa("");
+  }
+
+  public void nuevoGuardarropa(String descripcion) {
+    this.nuevoGuardarropa(descripcion, Arrays.AsList());
+  }
+
+  public void nuevoGuardarropa(String descripcion, List<Prenda> prendas) {
+    this.repositorioGuardarropas.nuevo(new Guardarropa(this.id, descripcion, prendas));
   }
 
   public void nuevaPrenda(Prenda prenda, String idGuardarropa) throws UsuarioException {
