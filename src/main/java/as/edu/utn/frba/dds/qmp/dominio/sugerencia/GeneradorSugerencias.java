@@ -1,4 +1,4 @@
-package as.edu.utn.frba.dds.qmp.dominio.sugerencia.generadorSugerencias;
+package as.edu.utn.frba.dds.qmp.dominio.sugerencia;
 
 import as.edu.utn.frba.dds.qmp.dominio.Atuendo;
 import as.edu.utn.frba.dds.qmp.dominio.prenda.Prenda;
@@ -9,6 +9,10 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class GeneradorSugerencias {
+  public List<Atuendo> sugerencias(List<Prenda> prendas) throws Exception {
+    return null;
+  }
+
   public List<Atuendo> generadorSugerenciasDesde(List<Prenda> prendasAptas) {
     // Si, se que esta feo el repetir 3 veces lo mismo. Intente hacerlo con un Predicate como parametro
     // de una funcion llamada prendaCumple y que haga el filter dandole test al predicate, pero me parecio
