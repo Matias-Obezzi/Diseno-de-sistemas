@@ -1,4 +1,4 @@
-package as.edu.utn.frba.dds.qmp.dominio.guardarropa.sugerenciaGuardarropa;
+package as.edu.utn.frba.dds.qmp.dominio.guardarropa.propuestaModificacionGuardarropa;
 
 import as.edu.utn.frba.dds.qmp.dominio.guardarropa.Guardarropa;
 import as.edu.utn.frba.dds.qmp.dominio.prenda.Prenda;

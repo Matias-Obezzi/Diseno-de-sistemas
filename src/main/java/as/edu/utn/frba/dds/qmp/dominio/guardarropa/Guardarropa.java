@@ -1,7 +1,7 @@
 package as.edu.utn.frba.dds.qmp.dominio.guardarropa;
 
 import as.edu.utn.frba.dds.qmp.dominio.Atuendo;
-import as.edu.utn.frba.dds.qmp.dominio.guardarropa.sugerenciaGuardarropa.PropuestaModificacionGuardarropa;
+import as.edu.utn.frba.dds.qmp.dominio.guardarropa.propuestaModificacionGuardarropa.PropuestaModificacionGuardarropa;
 import as.edu.utn.frba.dds.qmp.dominio.prenda.Prenda;
 import as.edu.utn.frba.dds.qmp.dominio.sugerencia.GeneradorSugerencias;
 
@@ -60,6 +60,14 @@ public class Guardarropa {
     this.propuestaAceptadas.remove(propuesta);
   }
 
+  public void nuevoUsuario(String idUsuario) {
+    idUsuarios.add(idUsuario);
+  }
+
+  public void descripcion(String descripcion) {
+    this.descripcion = descripcion;
+  }
+
   public List<Prenda> prendas() {
     return this.prendas;
   }
@@ -72,20 +80,12 @@ public class Guardarropa {
     return this.idUsuarios;
   }
 
-  public void nuevoUsuario(String idUsuario) {
-    idUsuarios.add(idUsuario);
-  }
-
   public boolean guardarropasDeUsuario(String idUsuario) {
     return idUsuarios.contains(idUsuario);
   }
 
   public String id() {
     return this.id;
-  }
-
-  public void descripcion(String descripcion) {
-    this.descripcion = descripcion;
   }
 
   public String descripcion() {

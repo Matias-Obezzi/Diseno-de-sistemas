@@ -1,7 +1,7 @@
 package as.edu.utn.frba.dds.qmp.dominio;
 
 import as.edu.utn.frba.dds.qmp.dominio.guardarropa.Guardarropa;
-import as.edu.utn.frba.dds.qmp.dominio.guardarropa.sugerenciaGuardarropa.PropuestaModificacionGuardarropa;
+import as.edu.utn.frba.dds.qmp.dominio.guardarropa.propuestaModificacionGuardarropa.PropuestaModificacionGuardarropa;
 import as.edu.utn.frba.dds.qmp.dominio.prenda.Prenda;
 import as.edu.utn.frba.dds.qmp.dominio.servicioClima.ServicioClima;
 import as.edu.utn.frba.dds.qmp.dominio.sugerencia.GeneradorSugerencias;
