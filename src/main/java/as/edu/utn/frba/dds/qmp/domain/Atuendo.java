@@ -1,7 +1,7 @@
-package as.edu.utn.frba.dds.qmp.dominio;
+package as.edu.utn.frba.dds.qmp.domain;
 
-import as.edu.utn.frba.dds.qmp.dominio.prenda.Categoria;
-import as.edu.utn.frba.dds.qmp.dominio.prenda.Prenda;
+import as.edu.utn.frba.dds.qmp.domain.prenda.Categoria;
+import as.edu.utn.frba.dds.qmp.domain.prenda.Prenda;
 import as.edu.utn.frba.dds.qmp.exceptions.CategoriaIncorrectaDePrendaException;
 
 public class Atuendo {

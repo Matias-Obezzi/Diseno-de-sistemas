@@ -1,12 +1,9 @@
 package as.edu.utn.frba.dds.qmp.repositories;
 
-import as.edu.utn.frba.dds.qmp.dominio.Usuario;
-import as.edu.utn.frba.dds.qmp.dominio.guardarropa.Guardarropa;
-import as.edu.utn.frba.dds.qmp.exceptions.RepositorioExcepcion;
+import as.edu.utn.frba.dds.qmp.domain.Usuario;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class RepositorioUsuarios implements RepositorioBase<Usuario> {
   private static RepositorioUsuarios repositorio;

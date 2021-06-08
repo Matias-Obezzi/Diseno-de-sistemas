@@ -1,7 +1,7 @@
 package as.edu.utn.frba.dds.qmp.repositories;
 
-import as.edu.utn.frba.dds.qmp.dominio.Usuario;
-import as.edu.utn.frba.dds.qmp.dominio.guardarropa.Guardarropa;
+import as.edu.utn.frba.dds.qmp.domain.Usuario;
+import as.edu.utn.frba.dds.qmp.domain.guardarropa.Guardarropa;
 import as.edu.utn.frba.dds.qmp.exceptions.RepositorioExcepcion;
 
 import java.util.ArrayList;

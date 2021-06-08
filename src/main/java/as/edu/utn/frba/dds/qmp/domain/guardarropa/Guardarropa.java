@@ -1,16 +1,12 @@
-package as.edu.utn.frba.dds.qmp.dominio.guardarropa;
+package as.edu.utn.frba.dds.qmp.domain.guardarropa;
 
-import as.edu.utn.frba.dds.qmp.dominio.Atuendo;
-import as.edu.utn.frba.dds.qmp.dominio.Usuario;
-import as.edu.utn.frba.dds.qmp.dominio.guardarropa.propuestaModificacionGuardarropa.PropuestaModificacionGuardarropa;
-import as.edu.utn.frba.dds.qmp.dominio.prenda.Prenda;
-import as.edu.utn.frba.dds.qmp.dominio.sugerencia.GeneradorSugerencias;
+import as.edu.utn.frba.dds.qmp.domain.Usuario;
+import as.edu.utn.frba.dds.qmp.domain.guardarropa.propuestaModificacionGuardarropa.PropuestaModificacionGuardarropa;
+import as.edu.utn.frba.dds.qmp.domain.prenda.Prenda;
 import as.edu.utn.frba.dds.qmp.exceptions.PropuestaModificacionGuardarropaException;
 import as.edu.utn.frba.dds.qmp.exceptions.UsuarioException;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.UUID;
 
 public class Guardarropa {
   private Usuario dueño;

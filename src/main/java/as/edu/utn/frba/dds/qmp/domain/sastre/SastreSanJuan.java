@@ -1,10 +1,10 @@
-package as.edu.utn.frba.dds.qmp.dominio.sastre;
+package as.edu.utn.frba.dds.qmp.domain.sastre;
 
-import as.edu.utn.frba.dds.qmp.dominio.prenda.BorradorPrenda;
-import as.edu.utn.frba.dds.qmp.dominio.prenda.Prenda;
-import as.edu.utn.frba.dds.qmp.dominio.prenda.TipoDePrenda;
-import as.edu.utn.frba.dds.qmp.dominio.prenda.material.Color;
-import as.edu.utn.frba.dds.qmp.dominio.prenda.material.TipoDeMaterial;
+import as.edu.utn.frba.dds.qmp.domain.prenda.BorradorPrenda;
+import as.edu.utn.frba.dds.qmp.domain.prenda.Prenda;
+import as.edu.utn.frba.dds.qmp.domain.prenda.TipoDePrenda;
+import as.edu.utn.frba.dds.qmp.domain.prenda.material.Color;
+import as.edu.utn.frba.dds.qmp.domain.prenda.material.TipoDeMaterial;
 
 public class SastreSanJuan extends Sastre {
 

@@ -1,6 +1,5 @@
 package as.edu.utn.frba.dds.qmp.repositories;
 
-import as.edu.utn.frba.dds.qmp.dominio.Usuario;
 import org.json.JSONObject;
 
 import java.util.ArrayList;

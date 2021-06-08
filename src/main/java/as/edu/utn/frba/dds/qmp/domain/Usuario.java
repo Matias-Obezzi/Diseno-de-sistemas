@@ -1,8 +1,8 @@
-package as.edu.utn.frba.dds.qmp.dominio;
+package as.edu.utn.frba.dds.qmp.domain;
 
-import as.edu.utn.frba.dds.qmp.dominio.guardarropa.Guardarropa;
-import as.edu.utn.frba.dds.qmp.dominio.prenda.Prenda;
-import as.edu.utn.frba.dds.qmp.dominio.sugerencia.GeneradorSugerencias;
+import as.edu.utn.frba.dds.qmp.domain.guardarropa.Guardarropa;
+import as.edu.utn.frba.dds.qmp.domain.prenda.Prenda;
+import as.edu.utn.frba.dds.qmp.domain.sugerencia.GeneradorSugerencias;
 import as.edu.utn.frba.dds.qmp.repositories.RepositorioGuardarropas;
 import java.util.*;
 

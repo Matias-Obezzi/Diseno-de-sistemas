@@ -1,8 +1,8 @@
-package as.edu.utn.frba.dds.qmp.dominio.guardarropa.propuestaModificacionGuardarropa;
+package as.edu.utn.frba.dds.qmp.domain.guardarropa.propuestaModificacionGuardarropa;
 
-import as.edu.utn.frba.dds.qmp.dominio.Usuario;
-import as.edu.utn.frba.dds.qmp.dominio.guardarropa.Guardarropa;
-import as.edu.utn.frba.dds.qmp.dominio.prenda.Prenda;
+import as.edu.utn.frba.dds.qmp.domain.Usuario;
+import as.edu.utn.frba.dds.qmp.domain.guardarropa.Guardarropa;
+import as.edu.utn.frba.dds.qmp.domain.prenda.Prenda;
 
 public abstract class PropuestaModificacionGuardarropa {
   protected Prenda prenda;

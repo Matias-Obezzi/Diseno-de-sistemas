@@ -1,4 +1,4 @@
-package as.edu.utn.frba.dds.qmp.dominio.servicioClima;
+package as.edu.utn.frba.dds.qmp.services.clima;
 import as.edu.utn.frba.dds.qmp.repositories.RepositorioAlertas;
 import org.json.JSONObject;
 

@@ -1,4 +1,4 @@
-package as.edu.utn.frba.dds.qmp.dominio.prenda.material;
+package as.edu.utn.frba.dds.qmp.domain.prenda.material;
 
 public class Material {
   private Trama trama;

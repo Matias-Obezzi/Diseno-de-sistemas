@@ -1,7 +1,7 @@
-package as.edu.utn.frba.dds.qmp.dominio.sastre;
+package as.edu.utn.frba.dds.qmp.domain.sastre;
 
-import as.edu.utn.frba.dds.qmp.dominio.Atuendo;
-import as.edu.utn.frba.dds.qmp.dominio.prenda.Prenda;
+import as.edu.utn.frba.dds.qmp.domain.Atuendo;
+import as.edu.utn.frba.dds.qmp.domain.prenda.Prenda;
 
 public abstract class Sastre {
   public Atuendo fabricarUniforme() throws Exception {

@@ -1,8 +1,8 @@
-package as.edu.utn.frba.dds.qmp.dominio.sugerencia;
+package as.edu.utn.frba.dds.qmp.domain.sugerencia;
 
-import as.edu.utn.frba.dds.qmp.dominio.Atuendo;
-import as.edu.utn.frba.dds.qmp.dominio.prenda.Prenda;
-import as.edu.utn.frba.dds.qmp.dominio.servicioClima.ServicioClima;
+import as.edu.utn.frba.dds.qmp.domain.Atuendo;
+import as.edu.utn.frba.dds.qmp.domain.prenda.Prenda;
+import as.edu.utn.frba.dds.qmp.services.clima.ServicioClima;
 import org.json.JSONObject;
 
 import java.util.List;

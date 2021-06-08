@@ -1,10 +1,8 @@
-package as.edu.utn.frba.dds.qmp.dominio.prenda;
+package as.edu.utn.frba.dds.qmp.domain.prenda;
 
-import as.edu.utn.frba.dds.qmp.dominio.prenda.material.TipoDeMaterial;
+import as.edu.utn.frba.dds.qmp.domain.prenda.material.TipoDeMaterial;
 import as.edu.utn.frba.dds.qmp.exceptions.TipoMaterialInvalidoParaCategoriaException;
 
-import java.awt.*;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 

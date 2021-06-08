@@ -1,6 +1,6 @@
 package as.edu.utn.frba.dds.qmp.exceptions;
 
-import as.edu.utn.frba.dds.qmp.dominio.prenda.Categoria;
+import as.edu.utn.frba.dds.qmp.domain.prenda.Categoria;
 
 public class CategoriaIncorrectaDePrendaException extends RuntimeException {
   public CategoriaIncorrectaDePrendaException(Categoria categoriaPrenda, Categoria categoriaEsperada) {
