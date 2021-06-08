@@ -7,11 +7,14 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.List;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 public interface ServicioClima {
 
-  public JSONObject getWeather(String ciudad);
+  public JSONObject climaEn(String ciudad);
+
+  public List<JSONObject> ultimasSugerencias();
 }

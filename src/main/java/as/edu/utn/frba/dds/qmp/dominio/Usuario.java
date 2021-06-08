@@ -7,7 +7,6 @@ import as.edu.utn.frba.dds.qmp.repositories.RepositorioGuardarropas;
 import java.util.*;
 
 public class Usuario {
-
   public void nuevoGuardarropa(String descripcion, List<Prenda> prendas) {
     RepositorioGuardarropas.getRepositorio().agregar(new Guardarropa(this, descripcion, prendas));
   }

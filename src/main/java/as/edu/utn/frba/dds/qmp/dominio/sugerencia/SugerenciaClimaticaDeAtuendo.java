@@ -1,6 +1,5 @@
 package as.edu.utn.frba.dds.qmp.dominio.sugerencia;
 
-import as.edu.utn.frba.dds.qmp.dominio.servicioClima.AccuWeatherAPI;
 import as.edu.utn.frba.dds.qmp.dominio.Atuendo;
 import as.edu.utn.frba.dds.qmp.dominio.prenda.Prenda;
 import as.edu.utn.frba.dds.qmp.dominio.servicioClima.ServicioClima;
@@ -20,7 +19,7 @@ public class SugerenciaClimaticaDeAtuendo extends GeneradorSugerencias{
   }
 
   public List<Atuendo> sugerencias(List<Prenda> prendasGuardarropa) {
-    JSONObject clima = apiClima.getWeather(lugar);
+    JSONObject clima = apiClima.climaEn(lugar);
     int temperatura = clima.getJSONObject("Temperature").getInt("Value");
     List<Prenda> prendasValidas = prendasGuardarropa.stream().filter(prenda -> prenda.acordeATemperatura(temperatura)).collect(Collectors.toList());
     return this.generadorSugerenciasDesde(prendasValidas);

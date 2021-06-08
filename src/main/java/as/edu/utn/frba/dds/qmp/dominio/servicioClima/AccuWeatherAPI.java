@@ -3,9 +3,14 @@ import org.json.JSONObject;
 
 import java.util.*;
 
-public final class AccuWeatherAPI implements ServicioClima{
+public class AccuWeatherAPI implements ServicioClima{
+  private List<JSONObject> sugerencias;
 
-  public final JSONObject getWeather(String ciudad) {
+  public List<JSONObject> ultimasSugerencias() {
+    return sugerencias;
+  }
+
+  public JSONObject climaEn(String ciudad) {
     JSONObject respuesta = new JSONObject();
     respuesta.append("DateTime", "2019-05-03T01:00:00-03:00");
     respuesta.append("EpochDateTime", 1556856000);
