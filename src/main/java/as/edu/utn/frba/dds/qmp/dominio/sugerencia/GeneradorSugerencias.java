@@ -9,12 +9,9 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public abstract class GeneradorSugerencias {
-  public abstract List<Atuendo> sugerencias(List<Prenda> prendas) throws Exception;
+  public abstract List<Atuendo> sugerencias(List<Prenda> prendas);
 
   public List<Atuendo> generadorSugerenciasDesde(List<Prenda> prendasAptas) {
-    // Si, se que esta feo el repetir 3 veces lo mismo. Intente hacerlo con un Predicate como parametro
-    // de una funcion llamada prendaCumple y que haga el filter dandole test al predicate, pero me parecio
-    // mucho mas feo y engorroso que lo que esta abajo :(
     Set<Prenda> prendasSuperiores = prendasAptas.stream().filter(Prenda::esParteSuperior).collect(Collectors.toSet());
     Set<Prenda> prendasInferiores = prendasAptas.stream().filter(Prenda::esParteInferior).collect(Collectors.toSet());
     Set<Prenda> calzados = prendasAptas.stream().filter(Prenda::esCalzado).collect(Collectors.toSet());

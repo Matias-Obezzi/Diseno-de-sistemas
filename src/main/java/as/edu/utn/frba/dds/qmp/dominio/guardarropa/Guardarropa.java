@@ -68,10 +68,6 @@ public class Guardarropa {
     return this.prendas;
   }
 
-  public List<Atuendo> sugerencias(GeneradorSugerencias generadorSugerencias) throws Exception {
-    return generadorSugerencias.sugerencias(this.prendas);
-  }
-
   public Usuario dueño() {
     return this.dueño;
   }
