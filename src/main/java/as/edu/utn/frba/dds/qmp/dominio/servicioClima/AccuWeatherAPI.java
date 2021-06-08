@@ -1,13 +1,18 @@
 package as.edu.utn.frba.dds.qmp.dominio.servicioClima;
+import as.edu.utn.frba.dds.qmp.repositories.RepositorioAlertas;
 import org.json.JSONObject;
 
 import java.util.*;
 
 public class AccuWeatherAPI implements ServicioClima{
-  private List<JSONObject> sugerencias;
+  public List<JSONObject> ultimasAlertas(String ciudad) {
+    return RepositorioAlertas.getRepositorio().deCiudad(ciudad);
+  }
 
-  public List<JSONObject> ultimasSugerencias() {
-    return sugerencias;
+  public JSONObject alertasEn(String ciudad) {
+    JSONObject alerta = new JSONObject();
+    RepositorioAlertas.getRepositorio().agregar(alerta);
+    return alerta;
   }
 
   public JSONObject climaEn(String ciudad) {

@@ -13,8 +13,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public interface ServicioClima {
-
   public JSONObject climaEn(String ciudad);
 
-  public List<JSONObject> ultimasSugerencias();
+  public JSONObject alertasEn(String ciudad);
+
+  public List<JSONObject> ultimasAlertas(String ciudad);
 }
