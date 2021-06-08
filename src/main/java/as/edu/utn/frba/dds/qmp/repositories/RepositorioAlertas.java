@@ -28,4 +28,8 @@ public class RepositorioAlertas implements RepositorioBase<JSONObject> {
   public void agregar(JSONObject alerta) {
     this.alertas.add(alerta);
   }
+
+  public void eliminarDeCiudad(String ciudad) {
+    alertas = alertas.stream().filter(alerta -> !alerta.get("ciudad").equals(ciudad)).collect(Collectors.toList());
+  }
 }
