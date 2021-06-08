@@ -3,18 +3,8 @@ import org.json.JSONObject;
 
 import java.util.*;
 
-public final class AccuWeatherAPI extends ServicioClima{
+public final class AccuWeatherAPI implements ServicioClima{
 
-  // Si, lo se. Esta no es la "API" que dejaron en el documento. Opte por cambiar el tipo de dato que
-  // responde por uno mas acorde a la consumision de una api. Gracias a esto ultimo, el admin puede
-  // "crear" consumidores de api. No se me ocurrio otra forma de que todos sean implementacion de la misma
-  // interfaz
-
-  public AccuWeatherAPI() {
-    super("http://dataservice.accuweather.com/locations/v1/adminareas", "Hola soy un token");
-  }
-
-  @Override
   public final JSONObject getWeather(String ciudad) {
     JSONObject respuesta = new JSONObject();
     respuesta.append("DateTime", "2019-05-03T01:00:00-03:00");

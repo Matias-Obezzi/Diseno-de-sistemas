@@ -9,18 +9,17 @@ import org.json.JSONObject;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class SugerenciaClimatica extends GeneradorSugerencias{
+public class SugerenciaClimaticaDeAtuendo extends GeneradorSugerencias{
+  private ServicioClima apiClima;
   private String lugar;
 
-  public SugerenciaClimatica(String lugar) {
+  public SugerenciaClimaticaDeAtuendo(ServicioClima apiClima, String lugar) {
     super();
+    this.apiClima = apiClima;
     this.lugar = lugar;
   }
 
-  public List<Atuendo> sugerencias(List<Prenda> prendasGuardarropa) throws Exception {
-    // Aca en realidad deberia de tomar la api seteada en un configuracion o algo similar en lugar de siempre
-    // accuWeather. Queda para futura implementacion :)
-    ServicioClima apiClima = new AccuWeatherAPI();
+  public List<Atuendo> sugerencias(List<Prenda> prendasGuardarropa) {
     JSONObject clima = apiClima.getWeather(lugar);
     int temperatura = clima.getJSONObject("Temperature").getInt("Value");
     List<Prenda> prendasValidas = prendasGuardarropa.stream().filter(prenda -> prenda.acordeATemperatura(temperatura)).collect(Collectors.toList());
