@@ -18,7 +18,7 @@ public class Usuario {
   }
 
   public void nuevoGuardarropa(String descripcion, List<Prenda> prendas) {
-    RepositorioGuardarropas.getRepositorio().nuevo(new Guardarropa(this, descripcion, prendas));
+    RepositorioGuardarropas.getRepositorio().agregar(new Guardarropa(this, descripcion, prendas));
   }
 
   public List<Guardarropa> guardarropasUsuario() {

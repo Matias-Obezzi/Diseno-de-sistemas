@@ -4,12 +4,13 @@ import as.edu.utn.frba.dds.qmp.dominio.Usuario;
 import as.edu.utn.frba.dds.qmp.dominio.guardarropa.Guardarropa;
 import as.edu.utn.frba.dds.qmp.exceptions.RepositorioExcepcion;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class RepositorioGuardarropas {
+public class RepositorioGuardarropas implements  RepositorioBase<Guardarropa> {
   private static RepositorioGuardarropas repositorio;
-  private List<Guardarropa> guardarropas;
+  private List<Guardarropa> guardarropas = new ArrayList<>();
 
   public static RepositorioGuardarropas getRepositorio() {
     if(repositorio == null) {
@@ -25,7 +26,11 @@ public class RepositorioGuardarropas {
     return guardarropas;
   }
 
-  public void nuevo(Guardarropa guardarropa) {
+  public List<Guardarropa> todo() {
+    return this.guardarropas;
+  }
+
+  public void agregar(Guardarropa guardarropa) {
     this.guardarropas.add(guardarropa);
   }
 }
