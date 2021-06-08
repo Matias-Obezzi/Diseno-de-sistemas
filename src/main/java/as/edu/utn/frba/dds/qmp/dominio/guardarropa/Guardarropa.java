@@ -1,67 +1,63 @@
 package as.edu.utn.frba.dds.qmp.dominio.guardarropa;
 
 import as.edu.utn.frba.dds.qmp.dominio.Atuendo;
+import as.edu.utn.frba.dds.qmp.dominio.Usuario;
 import as.edu.utn.frba.dds.qmp.dominio.guardarropa.propuestaModificacionGuardarropa.PropuestaModificacionGuardarropa;
 import as.edu.utn.frba.dds.qmp.dominio.prenda.Prenda;
 import as.edu.utn.frba.dds.qmp.dominio.sugerencia.GeneradorSugerencias;
+import as.edu.utn.frba.dds.qmp.exceptions.PropuestaModificacionGuardarropaException;
+import as.edu.utn.frba.dds.qmp.exceptions.UsuarioException;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
 public class Guardarropa {
-  private String id;
+  private Usuario dueño;
+  private List<Usuario> invitados;
+
   private String descripcion;
+
   private List<Prenda> prendas;
-  private List<String> idUsuarios;
   private List<PropuestaModificacionGuardarropa> propuestaPendientes;
-  private List<PropuestaModificacionGuardarropa> propuestaAceptadas;
 
-  public Guardarropa(String idUsuario) {
-    this(idUsuario,"");
-  }
-
-  public Guardarropa(String idUsuario, String descripcion) {
-    this(idUsuario, descripcion, Arrays.asList());
-  }
-
-  public Guardarropa(String idUsuario, String descripcion, List<Prenda> prendas) {
-    this.idUsuarios.add(idUsuario);
+  public Guardarropa(Usuario dueño, String descripcion, List<Prenda> prendas) {
+    this.dueño = dueño;
     this.descripcion = descripcion;
     this.prendas = prendas;
-    this.id = UUID.randomUUID().toString();
   }
 
-  public void nuevaPrenda(Prenda prenda) {
+  public void agregarPrenda(Prenda prenda, Usuario usuario) {
+    validarPermisosUsuario(usuario);
     this.prendas.add(prenda);
   }
 
-  public void quitarPrenda(Prenda prenda) {
+  public void quitarPrenda(Prenda prenda, Usuario usuario) {
+    validarPermisosUsuario(usuario);
     this.prendas.remove(prenda);
   }
 
-  public void nuevaPropuesta(PropuestaModificacionGuardarropa propuesta) {
+  public void agregarPropuesta(PropuestaModificacionGuardarropa propuesta) {
     this.propuestaPendientes.add(propuesta);
   }
 
   public void aceptarPropuesta(PropuestaModificacionGuardarropa propuesta) {
+    evaluarEstadoPropuesta(propuesta, false);
     propuesta.aplicar(this);
-    this.propuestaAceptadas.add(propuesta);
-    this.propuestaPendientes.remove(propuesta);
-  }
-
-  public void rechazarPropuesta(PropuestaModificacionGuardarropa propuesta) {
-    this.propuestaPendientes.remove(propuesta);
   }
 
   public void deshacerPropuesta(PropuestaModificacionGuardarropa propuesta) {
+    evaluarEstadoPropuesta(propuesta, true);
     propuesta.deshacer(this);
-    this.propuestaPendientes.add(propuesta);
-    this.propuestaAceptadas.remove(propuesta);
   }
 
-  public void nuevoUsuario(String idUsuario) {
-    idUsuarios.add(idUsuario);
+  public void rechazarPropuesta(PropuestaModificacionGuardarropa propuesta) {
+    evaluarEstadoPropuesta(propuesta, false);
+    this.propuestaPendientes.remove(propuesta);
+  }
+
+  public void agregarInvitado(Usuario usuario) {
+    this.invitados.add(usuario);
   }
 
   public void descripcion(String descripcion) {
@@ -76,19 +72,35 @@ public class Guardarropa {
     return generadorSugerencias.sugerencias(this.prendas);
   }
 
-  public List<String> idUsuarios() {
-    return this.idUsuarios;
+  public Usuario dueño() {
+    return this.dueño;
   }
 
-  public boolean guardarropasDeUsuario(String idUsuario) {
-    return idUsuarios.contains(idUsuario);
+  public List<Usuario> invitados() {
+    return this.invitados;
   }
 
-  public String id() {
-    return this.id;
+  public boolean guardarropasDeUsuario(Usuario usuario) {
+    return this.dueño.equals(usuario);
+  }
+
+  public boolean usuarioEnGuardarropa(Usuario usuario) {
+    return this.dueño.equals(usuario) || this.invitados.contains(usuario);
+  }
+
+  public void validarPermisosUsuario(Usuario usuario) {
+    if(!this.usuarioEnGuardarropa(usuario)) {
+      throw new UsuarioException("No te encuentras entre los usuarios del guardarropa por lo que no posee permisos suficientes");
+    }
   }
 
   public String descripcion() {
     return this.descripcion;
+  }
+
+  private void evaluarEstadoPropuesta(PropuestaModificacionGuardarropa prouesta, boolean estado) {
+    if(prouesta.aplicada() != estado) {
+      throw new PropuestaModificacionGuardarropaException("No se puede realizar la acción debido a su estado");
+    }
   }
 }
